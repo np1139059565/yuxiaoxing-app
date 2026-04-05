@@ -41,7 +41,7 @@ export default function DramaList() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white pb-24">
-      {/* Header */}
+      {/* 头部 */}
       <div className="bg-white/80 backdrop-blur-lg px-5 pt-12 pb-4 sticky top-0 z-20 border-b border-gray-100">
         <div className="flex items-center gap-3 mb-3">
           <button
@@ -56,7 +56,7 @@ export default function DramaList() {
           </div>
         </div>
 
-        {/* Search */}
+        {/* 搜索 */}
         <div className="relative mb-3">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
           <input
@@ -68,7 +68,7 @@ export default function DramaList() {
           />
         </div>
 
-        {/* Category Tabs */}
+        {/* 分类选项卡 */}
         <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
           {CATEGORIES.map((cat) => (
             <button
@@ -85,7 +85,7 @@ export default function DramaList() {
           ))}
         </div>
 
-        {/* Difficulty Filter */}
+        {/* 难度筛选 */}
         <div className="flex gap-2 mt-2">
           {DIFFICULTIES.map((diff) => (
             <button
@@ -103,7 +103,7 @@ export default function DramaList() {
         </div>
       </div>
 
-      {/* Drama List */}
+      {/* 短剧列表 */}
       <div className="px-5 pt-4 space-y-3">
         {filteredDramas.length === 0 ? (
           <div className="text-center py-16">

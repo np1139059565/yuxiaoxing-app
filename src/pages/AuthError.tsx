@@ -8,7 +8,7 @@ export default function AuthErrorPage() {
   const [countdown, setCountdown] = useState(3);
   const errorMessage =
     searchParams.get('msg') ||
-    'Sorry, your authentication information is invalid or has expired';
+    '抱歉，您的认证信息无效或已过期';
 
   useEffect(() => {
     // 倒计时逻辑
@@ -38,7 +38,7 @@ export default function AuthErrorPage() {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 p-6 text-center">
       <div className="space-y-6 max-w-md">
         <div className="space-y-4">
-          {/* Error icon */}
+          {/* 错误图标 */}
           <div className="flex justify-center">
             <div className="relative">
               <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full"></div>
@@ -49,12 +49,12 @@ export default function AuthErrorPage() {
             </div>
           </div>
 
-          {/* Error title */}
+          {/* 错误标题 */}
           <h1 className="text-2xl font-bold text-gray-800">
-            Authentication Error
+            认证错误
           </h1>
 
-          {/* Error description */}
+          {/* 错误描述 */}
           <p className="text-base text-muted-foreground">{errorMessage}</p>
 
           {/* Countdown提示 */}
@@ -62,23 +62,23 @@ export default function AuthErrorPage() {
             <p className="text-sm text-gray-500">
               {countdown > 0 ? (
                 <>
-                  Will automatically return to the home page in{' '}
-                  <span className="text-blue-600 font-semibold text-base">
-                    {countdown}
-                  </span>{' '}
-                  seconds
+                  将在{' '}
+                      <span className="text-blue-600 font-semibold text-base">
+                        {countdown}
+                      </span>{' '}
+                      秒后自动返回首页
                 </>
               ) : (
-                'Redirecting...'
+                '正在重定向...'
               )}
             </p>
           </div>
         </div>
 
-        {/* Return to home button */}
+        {/* 返回首页按钮 */}
         <div className="flex justify-center pt-2">
           <Button onClick={handleReturnHome} className="px-6">
-            Return to Home
+            返回首页
           </Button>
         </div>
       </div>

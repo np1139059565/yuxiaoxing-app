@@ -172,7 +172,7 @@ export default function DramaDubbing() {
           <div className="w-9" />
         </div>
 
-        {/* Video area (simulated) */}
+        {/* 视频区域（模拟） */}
         <div className="mx-4 rounded-2xl overflow-hidden bg-gray-800 aspect-video flex items-center justify-center relative">
           <img
             src={drama.coverUrl}
@@ -191,7 +191,7 @@ export default function DramaDubbing() {
               )}
             </button>
           </div>
-          {/* Progress bar */}
+          {/* 进度条 */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
             <div
               className="h-full bg-purple-500 transition-all duration-100"
@@ -200,7 +200,7 @@ export default function DramaDubbing() {
           </div>
         </div>
 
-        {/* Subtitles */}
+        {/* 字幕 */}
         <div className="flex-1 px-4 pt-6 space-y-3">
           {lines.map((line, idx) => (
             <div
@@ -225,7 +225,7 @@ export default function DramaDubbing() {
           ))}
         </div>
 
-        {/* Bottom buttons */}
+        {/* 底部按钮 */}
         <div className="px-4 pb-8 pt-4 flex gap-3">
           <button
             onClick={() => {
@@ -281,7 +281,7 @@ export default function DramaDubbing() {
           </span>
         </div>
 
-        {/* Scene image */}
+        {/* 场景图片 */}
         <div className="mx-4 rounded-2xl overflow-hidden bg-gray-800 aspect-video flex items-center justify-center relative">
           <img
             src={drama.coverUrl}
@@ -304,7 +304,7 @@ export default function DramaDubbing() {
           )}
         </div>
 
-        {/* Rhythm bar */}
+        {/* 节奏条 */}
         {isRecording && (
           <div className="mx-4 mt-3">
             <div className="flex gap-0.5 h-8 items-end">
@@ -323,7 +323,7 @@ export default function DramaDubbing() {
           </div>
         )}
 
-        {/* Score feedback */}
+        {/* 评分反馈 */}
         {isLineRecorded && lineScore > 0 && (
           <div className="mx-4 mt-4 bg-white/10 rounded-xl p-4 text-center">
             <p className="text-white text-lg font-bold">
@@ -335,7 +335,7 @@ export default function DramaDubbing() {
 
         <div className="flex-1" />
 
-        {/* Controls */}
+        {/* 控件 */}
         <div className="px-4 pb-8 pt-4">
           <div className="flex items-center justify-center gap-6 mb-4">
             {!isRecording && isLineRecorded && (
@@ -409,7 +409,7 @@ export default function DramaDubbing() {
           配音完成，看看你的得分吧！
         </h2>
 
-        {/* Score Circle */}
+        {/* 评分圆环 */}
         <div className="relative w-36 h-36 mb-6">
           <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
             <circle cx="60" cy="60" r="54" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="8" />
@@ -434,7 +434,7 @@ export default function DramaDubbing() {
           {getScoreEmoji(totalScore)} {getScoreMessage(totalScore)}
         </p>
 
-        {/* Score Breakdown */}
+        {/* 评分拆解 */}
         <div className="w-full bg-white/10 rounded-2xl p-4 mb-6 space-y-3">
           {[
             { label: "发音", score: pronunciation, max: 40 },
@@ -457,7 +457,7 @@ export default function DramaDubbing() {
           ))}
         </div>
 
-        {/* Buttons */}
+        {/* 按钮 */}
         <div className="w-full space-y-3">
           <button
             onClick={() => {
@@ -498,7 +498,7 @@ export default function DramaDubbing() {
           <div className="w-9" />
         </div>
 
-        {/* Video result (simulated) */}
+        {/* 视频结果（模拟） */}
         <div className="mx-4 rounded-2xl overflow-hidden bg-gray-800 aspect-video relative">
           <img
             src={drama.coverUrl}
@@ -523,7 +523,7 @@ export default function DramaDubbing() {
           </div>
         </div>
 
-        {/* Skin Selection */}
+        {/* 皮肤选择 */}
         <div className="px-4 mt-4">
           <p className="text-white/60 text-sm mb-2">配音皮肤（点击切换）</p>
           <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
@@ -543,7 +543,7 @@ export default function DramaDubbing() {
           </div>
         </div>
 
-        {/* Lines recap */}
+        {/* 台词回顾 */}
         <div className="px-4 mt-4 flex-1">
           <div className="space-y-2">
             {lines.map((line, idx) => (
@@ -561,7 +561,7 @@ export default function DramaDubbing() {
           </div>
         </div>
 
-        {/* Action buttons */}
+        {/* 操作按钮 */}
         <div className="px-4 pb-8 pt-4 flex gap-3">
           <button
             onClick={() => {
@@ -585,7 +585,7 @@ export default function DramaDubbing() {
           </button>
         </div>
 
-        {/* Toast */}
+        {/* 提示 */}
         {showShareToast && (
           <div className="fixed top-20 left-1/2 -translate-x-1/2 bg-black/80 text-white px-5 py-2.5 rounded-full text-sm font-medium z-50 animate-bounce">
             ✅ 操作成功！
