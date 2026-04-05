@@ -21,7 +21,7 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pb-24">
-      {/* Header */}
+      {/* 头部 */}
       <div className="bg-gradient-to-br from-orange-500 to-purple-500 px-5 pt-12 pb-8 rounded-b-[2rem] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4" />
@@ -36,7 +36,7 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* Stats */}
+        {/* 统计 */}
         <div className="relative z-10 grid grid-cols-4 gap-2 mt-6 bg-white/10 rounded-xl p-3">
           <div className="text-center">
             <p className="text-xl font-bold text-white">{stats.totalMastered}</p>
@@ -58,7 +58,7 @@ export default function Profile() {
       </div>
 
       <div className="px-5 -mt-4 relative z-10">
-        {/* Achievement Badges */}
+        {/* 成就徽章 */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4">
           <h3 className="font-bold text-gray-800 text-sm mb-3 flex items-center gap-1.5">
             <Trophy className="w-4 h-4 text-yellow-500" />
@@ -92,7 +92,7 @@ export default function Profile() {
           </div>
         </div>
 
-        {/* My Vocabulary */}
+        {/* 我的词库 */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4">
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-bold text-gray-800 text-sm flex items-center gap-1.5">
@@ -133,7 +133,7 @@ export default function Profile() {
           )}
         </div>
 
-        {/* My Works */}
+        {/* 我的作品 */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4">
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-bold text-gray-800 text-sm flex items-center gap-1.5">
@@ -179,7 +179,7 @@ export default function Profile() {
           )}
         </div>
 
-        {/* Settings Menu */}
+        {/* 设置菜单 */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-4">
           {[
             { icon: Settings, label: "设置", color: "text-gray-500" },

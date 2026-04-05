@@ -9,7 +9,7 @@ export default function FlashcardHome() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white pb-24">
-      {/* Header */}
+      {/* 头部 */}
       <div className="bg-white/80 backdrop-blur-lg px-5 pt-12 pb-4 sticky top-0 z-20 border-b border-gray-100">
         <div className="flex items-center gap-3">
           <button
@@ -26,7 +26,7 @@ export default function FlashcardHome() {
       </div>
 
       <div className="px-5 pt-5">
-        {/* Progress Card */}
+        {/* 进度卡片 */}
         <div className="bg-gradient-to-br from-orange-500 to-orange-400 rounded-2xl p-5 mb-6 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/4" />
           <h3 className="text-sm font-medium text-orange-100 mb-3">我的进度</h3>
@@ -49,7 +49,7 @@ export default function FlashcardHome() {
           </p>
         </div>
 
-        {/* Mode Selection */}
+        {/* 模式选择 */}
         <h3 className="font-bold text-gray-800 mb-3">选择学习模式</h3>
         <div className="space-y-3 mb-6">
           <button
@@ -92,7 +92,7 @@ export default function FlashcardHome() {
           </button>
         </div>
 
-        {/* Emotion Groups */}
+        {/* 情绪分组 */}
         <h3 className="font-bold text-gray-800 mb-3 flex items-center gap-1.5">
           <Smile className="w-4 h-4" />
           情绪分组
