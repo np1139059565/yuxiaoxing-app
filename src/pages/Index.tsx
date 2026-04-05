@@ -9,7 +9,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 via-white to-white pb-24">
-      {/* Header */}
+      {/* 头部 */}
       <div className="relative overflow-hidden bg-gradient-to-br from-orange-500 to-orange-400 px-5 pt-12 pb-8 rounded-b-[2rem]">
         <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/4" />
@@ -29,7 +29,7 @@ export default function Index() {
       </div>
 
       <div className="px-5 -mt-4 relative z-10">
-        {/* Today's Stats Card */}
+        {/* 今日统计卡片 */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-5">
           <h3 className="text-sm font-semibold text-gray-500 mb-3">今日学习进度</h3>
           <div className="grid grid-cols-3 gap-3">
@@ -48,7 +48,7 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Quick Actions */}
+        {/* 快速操作 */}
         <div className="grid grid-cols-2 gap-3 mb-6">
           <button
             onClick={() => navigate("/flashcard")}
@@ -72,7 +72,7 @@ export default function Index() {
           </button>
         </div>
 
-        {/* Today's Best */}
+        {/* 今日最佳 */}
         <div className="mb-6">
           <div className="flex items-center justify-between mb-3">
             <h3 className="font-bold text-gray-800 flex items-center gap-1.5">
@@ -121,7 +121,7 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Hero Banner */}
+        {/* 头图横幅 */}
         <div className="rounded-2xl overflow-hidden mb-4">
           <img
             src="https://mgx-backend-cdn.metadl.com/generate/images/13357/2026-04-02/ef55279f-52b3-4895-8bad-201d7ee55a0d.png"

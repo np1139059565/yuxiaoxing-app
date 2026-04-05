@@ -3,7 +3,7 @@ import App from './App.tsx';
 import './index.css';
 import { loadRuntimeConfig } from './lib/config.ts';
 
-// Load runtime configuration before rendering the app
+// 在渲染应用之前加载运行时配置
 async function initializeApp() {
   try {
     await loadRuntimeConfig();
@@ -15,9 +15,9 @@ async function initializeApp() {
     );
   }
 
-  // Render the app
+  // 渲染应用
   createRoot(document.getElementById('root')!).render(<App />);
 }
 
-// Initialize the app
+// 初始化应用
 initializeApp();

@@ -3,20 +3,20 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { marked } from "./marked.esm.js";
 
-// Get project root directory (parent directory of seo-scripts)
+// 获取项目根目录（seo-scripts 的父目录）
 const currentFile = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(currentFile);
 const projectRoot = path.resolve(__dirname, '..');
 
-// Base URL of the website (should match the actual domain)
+// 网站基础 URL（应与实际域名匹配）
 const baseUrl = "https://atoms.template.com";
 
-// GA4 Measurement ID - set via site.config.json
-// Format: "G-XXXXXXXXXX" or empty string if not needed
+// GA4 测量 ID - 通过 site.config.json 设置
+// 格式："G-XXXXXXXXXX" 或空字符串（如果不需要）
 let GA4_MEASUREMENT_ID = "";
 
-// Source markdown files directory
-// First look for ./seo/content in the project, if not found, look for ../seo/content at the same level
+// 源 Markdown 文件目录
+// 优先在项目内查找 ./seo/content，若不存在则查找同级目录的 ../seo/content
 const localBlogDir = path.resolve(projectRoot, 'seo', 'content');
 const siblingBlogDir = path.resolve(projectRoot, '..', 'seo', 'content');
 const blogDir = fs.existsSync(localBlogDir) ? localBlogDir : siblingBlogDir;
@@ -181,7 +181,7 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
       }
     }
     
-    /* Navigation */
+    /* 导航 */
     .nav {
       margin-bottom: 2rem;
       display: flex;
@@ -201,7 +201,7 @@ ${JSON.stringify(breadcrumbSchema, null, 2)}
       color: var(--color-text);
     }
     
-    /* Breadcrumb */
+    /* 面包屑（Breadcrumb） */
     .breadcrumb {
       display: flex;
       align-items: center;
@@ -515,7 +515,7 @@ function formatDate(dateString) {
   }
 }
 
-// Parse frontmatter
+// 解析 frontmatter
 function parseFrontmatter(content) {
   const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
   const match = content.match(frontmatterRegex);
@@ -531,17 +531,17 @@ function parseFrontmatter(content) {
   let currentKey = null;
   let inArray = false;
 
-  // Parse YAML frontmatter
+  // 解析 YAML frontmatter
   frontmatterText.split('\n').forEach(line => {
     const trimmedLine = line.trim();
 
-    // Skip empty lines
+    // 跳过空行
     if (!trimmedLine) return;
 
-    // Check if it's an array item (starts with -)
+    // 检查是否为数组项（以 - 开头）
     if (trimmedLine.startsWith('-')) {
       const value = trimmedLine.substring(1).trim();
-      // Handle quoted values
+      // 处理带引号的值
       const cleanValue = (value.startsWith('"') && value.endsWith('"')) ||
         (value.startsWith("'") && value.endsWith("'"))
         ? value.slice(1, -1) : value;
@@ -555,22 +555,22 @@ function parseFrontmatter(content) {
       return;
     }
 
-    // Reset array state
+    // 重置数组状态
     inArray = false;
 
-    // Check if it's a key-value pair
+    // 检查是否为键值对
     const colonIndex = trimmedLine.indexOf(':');
     if (colonIndex > 0) {
       currentKey = trimmedLine.substring(0, colonIndex).trim();
       let value = trimmedLine.substring(colonIndex + 1).trim();
 
-      // Handle quoted strings
+      // 处理带引号的字符串
       if ((value.startsWith('"') && value.endsWith('"')) ||
         (value.startsWith("'") && value.endsWith("'"))) {
         value = value.slice(1, -1);
       }
 
-      // If value is empty, it might be the start of an array
+      // 如果值为空，可能是数组的开始
       if (!value) {
         frontmatter[currentKey] = [];
         inArray = true;

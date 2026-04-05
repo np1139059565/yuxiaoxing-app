@@ -1,4 +1,4 @@
 import { createClient } from '@metagptx/web-sdk';
 
-// Create client instance
+// 创建客户端实例
 export const client = createClient();

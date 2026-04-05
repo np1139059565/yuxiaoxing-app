@@ -19,7 +19,7 @@ process.env.VITE_APP_TITLE = escapeHtmlAttr(process.env.VITE_APP_TITLE);
 process.env.VITE_APP_DESCRIPTION = escapeHtmlAttr(process.env.VITE_APP_DESCRIPTION);
 process.env.VITE_APP_LOGO_URL ??= process.env.OVERVIEW_LOGO_URL ?? 'https://public-frontend-cos.metadl.com/mgx/img/favicon_atoms.ico';
 
-// https://vitejs.dev/config/
+// Vite 配置参考：https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
     viteSourceLocator({
@@ -48,7 +48,7 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Vendor chunks
+          // 供应商拆包（vendor chunks）
           'react-vendor': ['react', 'react-dom'],
           'router-vendor': ['react-router-dom'],
           'ui-vendor': [

@@ -53,7 +53,7 @@ export default function DramaDubbing() {
 
   const lines = drama.lines;
 
-  // Preview step
+  // 预览步骤
   const togglePlayback = () => {
     if (isPlaying) {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -83,17 +83,17 @@ export default function DramaDubbing() {
     return -1;
   };
 
-  // Record step
+  // 录制步骤
   const startRecording = () => {
     setIsRecording(true);
-    // Simulate 3 second recording
+    // 模拟 3 秒录制
     recordTimerRef.current = setTimeout(() => {
       setIsRecording(false);
       const newRecorded = [...recordedLines];
       newRecorded[currentLineIndex] = true;
       setRecordedLines(newRecorded);
 
-      // Generate mock score
+      // 生成模拟得分
       const score = Math.floor(Math.random() * 30) + 70;
       const newScores = [...scores];
       newScores[currentLineIndex] = score;
@@ -127,7 +127,7 @@ export default function DramaDubbing() {
     if (currentLineIndex < lines.length - 1) {
       setCurrentLineIndex((prev) => prev + 1);
     } else {
-      // Calculate total score
+      // 计算总分
       const validScores = scores.filter((s) => s > 0);
       const avg = validScores.length > 0
         ? Math.round(validScores.reduce((a, b) => a + b, 0) / validScores.length)
@@ -153,7 +153,7 @@ export default function DramaDubbing() {
     return "💪";
   };
 
-  // PREVIEW STEP
+  // 预览阶段
   if (step === "preview") {
     const activeIdx = getActiveLineIndex();
     const maxTime = lines[lines.length - 1].endTime;
@@ -260,7 +260,7 @@ export default function DramaDubbing() {
     );
   }
 
-  // RECORD STEP
+  // 录制阶段
   if (step === "record") {
     const currentLine = lines[currentLineIndex];
     const lineScore = scores[currentLineIndex] || 0;
@@ -396,7 +396,7 @@ export default function DramaDubbing() {
     );
   }
 
-  // SCORE STEP
+  // 评分阶段
   if (step === "score") {
     const pronunciation = Math.round(totalScore * 0.4);
     const intonation = Math.round(totalScore * 0.2 + Math.random() * 5);
@@ -481,7 +481,7 @@ export default function DramaDubbing() {
     );
   }
 
-  // RESULT STEP
+  // 结果阶段
   if (step === "result") {
     const SKINS = ["原声", "御姐音", "正太音", "温柔音", "搞笑电音"];
 

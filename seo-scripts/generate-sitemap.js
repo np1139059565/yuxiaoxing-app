@@ -26,14 +26,14 @@ function collectHtmlFiles(dir, basePath = "") {
       const relativePath = path.join(basePath, file).replace(/\\/g, '/');
       let url = `${baseUrl}${relativePath.startsWith('/') ? '' : '/'}${relativePath}`;
 
-      // If it's index.html, remove filename and keep directory path (ending with /)
+      // 如果是 index.html，则移除文件名并保留目录路径（以 / 结尾）
       if (file === 'index.html') {
         url = url.replace(/\/index\.html$/, '/');
       }
 
       let lastmod = stat.mtime.toISOString();
 
-      // Use markdown file's mtime for blog posts (HTML is regenerated each build)
+      // 对于博客文章，使用 Markdown 文件的 mtime（HTML 每次构建时会重生成）
       if (basePath.includes('/blog') && file === 'index.html') {
         const pathParts = relativePath.split('/');
         const slug = pathParts[pathParts.length - 2];
@@ -54,7 +54,7 @@ function collectHtmlFiles(dir, basePath = "") {
   return results;
 }
 
-// Collect all HTML files
+// 收集所有 HTML 文件
 const urls = [];
 
 if (fs.existsSync(path.join(distDir, "index.html"))) {

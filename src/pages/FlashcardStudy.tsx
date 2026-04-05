@@ -31,7 +31,7 @@ export default function FlashcardStudy() {
 
   const currentCard = cards[currentIndex];
 
-  // Speed mode auto-advance
+  // 极速模式自动前进
   useEffect(() => {
     if (mode === "speed" && !isFinished) {
       const timer = setInterval(() => {
@@ -149,7 +149,7 @@ export default function FlashcardStudy() {
     }
   };
 
-  // Listen mode
+  // 听力模式
   if (mode === "listen") {
     return <ListenMode cards={cards} onBack={() => navigate("/flashcard")} speak={speak} />;
   }
@@ -190,7 +190,7 @@ export default function FlashcardStudy() {
 
   return (
     <div className="min-h-screen bg-gray-950 flex flex-col select-none touch-none overflow-hidden">
-      {/* Top Bar */}
+      {/* 顶部栏 */}
       <div className="flex items-center justify-between px-4 pt-12 pb-3 relative z-20">
         <button
           onClick={() => navigate("/flashcard")}
@@ -204,9 +204,9 @@ export default function FlashcardStudy() {
         </span>
       </div>
 
-      {/* Flashcard */}
+      {/* 闪记卡片 */}
       <div className="flex-1 flex items-center justify-center px-4 relative">
-        {/* Swipe indicators */}
+        {/* 划动指示 */}
         <div
           className={`absolute left-4 top-1/2 -translate-y-1/2 transition-opacity ${
             dragOffset.x < -30 ? "opacity-100" : "opacity-0"
@@ -268,7 +268,7 @@ export default function FlashcardStudy() {
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
         >
-          {/* Image */}
+          {/* 图片 */}
           <div className="relative aspect-square">
             <img
               src={currentCard.imageUrl}
@@ -285,7 +285,7 @@ export default function FlashcardStudy() {
             )}
           </div>
 
-          {/* Word & Sentence */}
+          {/* 单词与例句 */}
           <div className="p-5">
             <div className="flex items-center gap-3 mb-2">
               <h2 className="text-3xl font-bold text-gray-900">{currentCard.word}</h2>
@@ -311,7 +311,7 @@ export default function FlashcardStudy() {
           </div>
         </div>
 
-        {/* Feedback Toast */}
+        {/* 反馈提示 */}
         {showFeedback && (
           <div className="absolute top-8 left-1/2 -translate-x-1/2 bg-black/80 text-white px-5 py-2.5 rounded-full text-sm font-medium animate-bounce z-30">
             {feedback}
@@ -319,7 +319,7 @@ export default function FlashcardStudy() {
         )}
       </div>
 
-      {/* Bottom hint */}
+      {/* 底部提示 */}
       <div className="pb-8 pt-4 text-center">
         <div className="flex items-center justify-center gap-6 text-white/40 text-xs">
           <span>← 跳过</span>
@@ -332,7 +332,7 @@ export default function FlashcardStudy() {
   );
 }
 
-// Listen Mode Sub-component
+// 听力模式子组件
 function ListenMode({
   cards,
   onBack,
@@ -441,7 +441,7 @@ function ListenMode({
         )}
       </div>
 
-      {/* Progress bar */}
+      {/* 进度条 */}
       <div className="px-6 pb-8">
         <div className="h-1 bg-white/10 rounded-full overflow-hidden">
           <div

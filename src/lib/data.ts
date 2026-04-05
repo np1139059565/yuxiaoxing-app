@@ -1,4 +1,4 @@
-// Mock data for 瞬说 Language Learning App
+// 瞬说 语言学习应用的模拟数据
 
 export interface Flashcard {
   id: string;
@@ -6,7 +6,7 @@ export interface Flashcard {
   partOfSpeech: string;
   sentence: string;
   imageUrl: string;
-  level: number; // 0=new, 1=initial, 2=consolidate, 3=proficient, 4=mastered
+  level: number; // 0=新，1=初始，2=巩固，3=熟练，4=精通
   rightSwipeCount: number;
   leftSwipeCount: number;
   isFavorited: boolean;
@@ -37,7 +37,7 @@ export interface UserStats {
   todayLearned: number;
   todayRemembered: number;
   totalMastered: number;
-  reactionSpeed: number; // percentage change vs yesterday
+  reactionSpeed: number; // 相对于昨日的百分比变化
   streakDays: number;
   totalWorks: number;
 }

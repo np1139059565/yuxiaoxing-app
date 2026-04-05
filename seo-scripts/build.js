@@ -4,7 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { main as convertBlog } from "./convert-blog-to-html.js";
 
-// Load config from site.config.json if exists
+// 从 site.config.json 加载配置（如果存在）
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
 const configPath = path.join(projectRoot, 'site.config.json');
@@ -14,7 +14,7 @@ if (fs.existsSync(configPath)) {
   try {
     siteConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
   } catch (e) {
-    // Ignore config parse errors
+    // 忽略配置解析错误
   }
 }
 

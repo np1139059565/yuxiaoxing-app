@@ -1,64 +1,64 @@
-// Runtime configuration
+// 运行时配置
 let runtimeConfig: {
   API_BASE_URL: string;
 } | null = null;
 
-// Configuration loading state
+// 配置加载状态
 let configLoading = true;
 
-// Default fallback configuration
+// 默认后备配置
 const defaultConfig = {
-  API_BASE_URL: 'http://127.0.0.1:8000', // Only used if runtime config fails to load
+  API_BASE_URL: 'http://127.0.0.1:8000', // 仅在运行时配置加载失败时使用
 };
 
-// Function to load runtime configuration
+// 加载运行时配置的函数
 export async function loadRuntimeConfig(): Promise<void> {
   try {
     console.log('🔧 DEBUG: Starting to load runtime config...');
-    // Try to load configuration from a config endpoint
+    // 尝试从配置接口加载配置
     const response = await fetch('/api/config');
     if (response.ok) {
       const contentType = response.headers.get('content-type');
-      // Only parse as JSON if the response is actually JSON
+      // 只有当响应确实是 JSON 时才解析为 JSON
       if (contentType && contentType.includes('application/json')) {
         runtimeConfig = await response.json();
         console.log('Runtime config loaded successfully');
       } else {
         console.log(
-          'Config endpoint returned non-JSON response, skipping runtime config'
+          '配置端点返回非 JSON 响应，跳过运行时配置'
         );
       }
     } else {
       console.log(
-        '🔧 DEBUG: Config fetch failed with status:',
+        '🔧 DEBUG: 配置获取失败，状态码：',
         response.status
       );
     }
   } catch (error) {
-    console.log('Failed to load runtime config, using defaults:', error);
+    console.log('加载运行时配置失败，使用默认配置：', error);
   } finally {
     configLoading = false;
     console.log(
-      '🔧 DEBUG: Config loading finished, configLoading set to false'
+      '🔧 DEBUG: 配置加载完成，configLoading 设置为 false'
     );
   }
 }
 
 // Get current configuration
 export function getConfig() {
-  // If config is still loading, return default config to avoid using stale Vite env vars
+  // 如果配置仍在加载中，返回默认配置以避免使用过期的 Vite 环境变量
   if (configLoading) {
     console.log('Config still loading, using default config');
     return defaultConfig;
   }
 
-  // First try runtime config (for Lambda)
+  // 优先使用运行时配置（用于 Lambda）
   if (runtimeConfig) {
     console.log('Using runtime config');
     return runtimeConfig;
   }
 
-  // Then try Vite environment variables (for local development)
+  // 然后尝试使用 Vite 环境变量（用于本地开发）
   if (import.meta.env.VITE_API_BASE_URL) {
     const viteConfig = {
       API_BASE_URL: import.meta.env.VITE_API_BASE_URL,
@@ -67,23 +67,23 @@ export function getConfig() {
     return viteConfig;
   }
 
-  // Finally fall back to default
+  // 最后回退到默认配置
   console.log('Using default config');
   return defaultConfig;
 }
 
-// Dynamic API_BASE_URL getter - this will always return the current config
+// 动态的 API_BASE_URL 访问器 - 始终返回当前配置
 export function getAPIBaseURL(): string {
   const baseURL = getConfig().API_BASE_URL;
-  // If the base URL is just '/', return empty string to avoid double slashes and incorrect http:// prefix
+  // 如果基础 URL 只是 '/'，返回空字符串以避免双斜杠或错误的 http:// 前缀
   if (baseURL === '/') {
     return '';
   }
   return baseURL;
 }
 
-// For backward compatibility, but this should be avoided
-// Removed static export to prevent using stale config values
+// 为兼容性保留（但不推荐）
+// 已移除静态导出以防止使用过期的配置值
 // export const API_BASE_URL = getAPIBaseURL();
 
 export const config = {
