@@ -1,55 +1,57 @@
 # 瞬说 (ShuoShuo) - 语言学习APP Web版 MVP
 
-## Design Guidelines
+## 设计指南
 
-### Design References
-- **Duolingo**: Playful, colorful, gamified learning experience
-- **多邻国/Babbel**: Clean mobile-first design, card-based interactions
-- **Style**: Modern Mobile-First + Playful + Warm Gradients
+### 设计参考
+- **Duolingo**：活泼、色彩丰富、游戏化的学习体验
+- **多邻国 / Babbel**：干净的移动优先设计，卡片式交互
+- **风格**：现代移动优先 + 俏皮 + 温暖渐变
 
-### Color Palette
-- Primary: #FF6B35 (Warm Orange - main CTA, energy)
-- Secondary: #7C3AED (Purple - accent, achievements)
-- Success: #10B981 (Green - correct/remembered)
-- Warning: #F59E0B (Yellow - slow pace)
-- Error: #EF4444 (Red - skip/wrong)
-- Background: #FAFAF8 (Warm White)
-- Card: #FFFFFF
-- Text Primary: #1A1A2E (Dark Navy)
-- Text Secondary: #6B7280 (Gray)
-- Gradient: linear-gradient(135deg, #FF6B35, #FF8C61)
+### 颜色方案
+- 主色（Primary）：#FF6B35（暖橙 — 主要 CTA、充满活力）
+- 辅色（Secondary）：#7C3AED（紫色 — 点缀、成就）
+- 成功（Success）：#10B981（绿色 — 正确/已记住）
+- 警示（Warning）：#F59E0B（黄色 — 速度较慢）
+- 错误（Error）：#EF4444（红色 — 跳过/错误）
+- 背景（Background）：#FAFAF8（暖白）
+- 卡片（Card）：#FFFFFF
+- 主文本（Text Primary）：#1A1A2E（深海军蓝）
+- 次文本（Text Secondary）：#6B7280（灰色）
+- 渐变（Gradient）：linear-gradient(135deg, #FF6B35, #FF8C61)
 
-### Typography
-- Headings: Inter, font-weight 700
-- Body: Inter, font-weight 400
-- Chinese UI text throughout (matching PRD)
+### 字体排版
+- 标题：Inter，字体粗细 700
+- 正文：Inter，字体粗细 400
+- UI 文本统一使用中文（与 PRD 保持一致）
 
-### Key Component Styles
-- Cards: White bg, rounded-2xl, shadow-lg, hover lift
-- Buttons: Rounded-full, gradient bg for primary, bold text
-- Flash Cards: Full-screen, swipeable, large imagery
-- Bottom Nav: Fixed bottom, 4 tabs with icons
-- Mobile viewport: max-w-md centered
+### 关键组件样式
+- 卡片：白色背景，rounded-2xl，shadow-lg，hover 提升效果
+- 按钮：圆角（rounded-full），主按钮使用渐变背景，粗体文本
+- 闪记卡片：全屏、可滑动、以大图为主
+- 底部导航：固定底部，4 个选项卡并带图标
+- 移动视口：最大宽度 max-w-md 居中展示
 
-### Images to Generate
-1. **hero-language-learning.jpg** - Colorful abstract illustration of language learning, speech bubbles, books, globe (Style: minimalist, vibrant colors)
-2. **flashcard-coffee.jpg** - Beautiful coffee cup on cafe table, warm lighting, cozy atmosphere (Style: photorealistic)
-3. **flashcard-hello.jpg** - Friendly people waving hello on a street, diverse group, warm sunlight (Style: photorealistic)
-4. **flashcard-eat.jpg** - Delicious food spread on a dining table, appetizing, bright colors (Style: photorealistic)
-5. **drama-cafe-scene.jpg** - Two people chatting at a cafe counter, friendly conversation scene (Style: cartoon/illustration, warm tones)
-6. **drama-street-scene.jpg** - Person asking for directions on a city street, helpful interaction (Style: cartoon/illustration, warm tones)
+### 需要生成的图片
+1. **hero-language-learning.jpg** - 色彩丰富的抽象插图，表现语言学习，包含对话气泡、书籍、地球等元素（风格：极简且鲜明）
+2. **flashcard-coffee.jpg** - 咖啡杯在咖啡馆桌上的摄影感图，暖色光线，氛围舒适（风格：照片级写实）
+3. **flashcard-hello.jpg** - 友好的人群在街头打招呼，多元化群体，温暖阳光（风格：照片级写实）
+4. **flashcard-eat.jpg** - 餐桌上美味菜肴的照片，色彩诱人（风格：照片级写实）
+5. **drama-cafe-scene.jpg** - 两人在咖啡吧台聊天的场景插画，友好对话（风格：卡通/插画，暖色调）
+6. **drama-street-scene.jpg** - 城市街道上询路的互动场景插画，体现助人情境（风格：卡通/插画，暖色调）
 
 ---
 
 ## Development Tasks & Files
 
-### Files to Create (8 files max):
+### 开发任务与文件
 
-1. **src/pages/Index.tsx** - Homepage with brand intro, bottom nav, today's stats, best dubbing showcase
-2. **src/pages/FlashCardHome.tsx** - Flash memory entry page with mode selection, emotion groups, progress stats
-3. **src/pages/FlashCardStudy.tsx** - Full-screen swipeable flash card study page with gesture interactions
-4. **src/pages/DramaList.tsx** - Drama dubbing list with category/difficulty filters, search, card grid
-5. **src/pages/DramaDubbing.tsx** - Complete dubbing flow: preview → record → score → result
-6. **src/pages/Profile.tsx** - User profile, stats, my vocabulary, my works, settings
-7. **src/components/BottomNav.tsx** - Shared bottom navigation component (首页/闪记/配音/我的)
-8. **src/data/mockData.ts** - All mock data (flashcards, dramas, user stats)
+#### 需创建的文件（最多 8 个）:
+
+1. **src/pages/Index.tsx** - 主页：品牌介绍、底部导航、今日统计、最佳配音展示
+2. **src/pages/FlashCardHome.tsx** - 闪记入口页：模式选择、情绪分组、进度统计
+3. **src/pages/FlashCardStudy.tsx** - 全屏滑动的闪记学习页，支持手势交互
+4. **src/pages/DramaList.tsx** - 配音短剧列表：分类/难度筛选、搜索、卡片网格
+5. **src/pages/DramaDubbing.tsx** - 完整的配音流程：预览 → 录音 → 打分 → 结果
+6. **src/pages/Profile.tsx** - 用户资料页：统计、词库、我的作品、设置
+7. **src/components/BottomNav.tsx** - 通用底部导航组件（首页 / 闪记 / 配音 / 我的）
+8. **src/data/mockData.ts** - 所有 mock 数据（闪记卡、短剧、用户统计）
