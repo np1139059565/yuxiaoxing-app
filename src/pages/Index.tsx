@@ -124,7 +124,7 @@ export default function Index() {
         {/* 头图横幅 */}
         <div className="rounded-2xl overflow-hidden mb-4">
           <img
-            src="https://mgx-backend-cdn.metadl.com/generate/images/13357/2026-04-02/ef55279f-52b3-4895-8bad-201d7ee55a0d.png"
+            src="/images/ef55279f-52b3-4895-8bad-201d7ee55a0d.png"
             alt="Language Learning"
             className="w-full h-36 object-cover"
           />
