@@ -16,7 +16,6 @@ export default function AuthErrorPage() {
       setCountdown(prev => {
         if (prev <= 1) {
           clearInterval(timer);
-          // Redirect to home page
           // 重定向到首页
           window.location.href = '/';
           return 0;
@@ -24,8 +23,6 @@ export default function AuthErrorPage() {
         return prev - 1;
       });
     }, 1000);
-
-    // Clean up timer
     // 清理计时器
     return () => clearInterval(timer);
   }, []);

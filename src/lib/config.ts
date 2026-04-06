@@ -44,7 +44,7 @@ export async function loadRuntimeConfig(): Promise<void> {
   }
 }
 
-// Get current configuration
+// 获取当前配置
 export function getConfig() {
   // 如果配置仍在加载中，返回默认配置以避免使用过期的 Vite 环境变量
   if (configLoading) {
